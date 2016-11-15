@@ -3,7 +3,7 @@
 
 public var speed : float = 5;
 public var torque: float = 5;
-public var maxVel: int = 10;
+public var maxVel: int = 255;
 public var rotationPoint: Transform;
 public var maxAngularVelocity: float;
 function Start () {
