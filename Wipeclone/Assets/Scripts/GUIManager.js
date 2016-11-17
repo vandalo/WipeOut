@@ -32,8 +32,9 @@ function Update () {
 	//Lap text
 	lapText.fontSize = screen.height * 0.05;
 	lapText.transform.position = Vector3 ( uiMargin, screen.height - uiMargin, 0);
-	lapText.text = "Lap 1/3";
-	//lapText.text = ""+Time.time;
+
+	lapText.text = "Lap " + ShipController.lap + "/3";
+	//lapText.text = "Lap 1/3";
 
 	//Time per lap
 	timeLap_1.fontSize = screen.height * 0.075;
