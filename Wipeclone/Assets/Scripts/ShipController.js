@@ -4,6 +4,7 @@
 public var speed : float = 5;
 public var torque: float = 5;
 public var maxVel: int = 255;
+public var turboSpeed: int 50;
 public var rotationPoint: Transform;
 public var maxAngularVelocity: float;
 public var fire: ParticleSystem;
@@ -48,17 +49,22 @@ function FixedUpdate() {
      clone.rigidbody.AddForce(clone.transform.forward * shootForce);*/
      }
 
-function OnTriggerEnter( object : Collider){
-	var rb = GetComponent.<Rigidbody>();
+function OnTriggerEnter( object : Collider){	
 	if(object.gameObject.tag == "sortida"){
 		if(is_correct == 1){
 		  lap++;
-		  is_correct = 0;
 		}
-		else if(is_correct == 0) is_correct = -1;
-		else if(is_correct == -1)is_correct = 0;
+		is_correct = 0;
+	}
+	if(object.gameObject.tag == "control"){
+		if(is_correct == 0)is_correct = -1;
 	}
 	if(object.gameObject.tag == "arrivada"){
 		if(is_correct == 0)is_correct = 1;
 	}
+	if(object.gameObject.tag == "turbo"){
+		var rb = GetComponent.<Rigidbody>();
+		rb.AddRelativeForce(0,turboSpeed,0);
+	}
+
 }
