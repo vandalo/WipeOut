@@ -26,28 +26,28 @@ function Update () {
 	vel = rb.velocity.magnitude;
 	greenComponent = (255.0 - vel)/255.0;
 	velocityText.color = Color(180,greenComponent,0);
-	velocityText.fontSize = screen.height * 0.2;
+	//velocityText.fontSize = screen.height * 0.2;
 	velocityText.text = ""+vel;
 
 	//Lap text
-	lapText.fontSize = screen.height * 0.05;
-	lapText.transform.position = Vector3 ( uiMargin, screen.height - uiMargin, 0);
+	//lapText.fontSize = screen.height * 0.05;
+	//lapText.transform.position = Vector3 ( uiMargin, screen.height - uiMargin, 0);
 
 	lapText.text = "Lap " + ShipController.lap + "/3";
 	//lapText.text = "Lap 1/3";
 
 	//Time per lap
-	timeLap_1.fontSize = screen.height * 0.075;
-	timeLap_1.transform.position = Vector3 ( uiMargin,  screen.height - uiMargin - screen.height * 0.05 - separation, 0);
+	//timeLap_1.fontSize = screen.height * 0.075;
+	//timeLap_1.transform.position = Vector3 ( uiMargin,  screen.height - uiMargin - screen.height * 0.05 - separation, 0);
 	timeLap_1.text = msToTime();
 
-	timeLap_2.fontSize = screen.height * 0.05;
-	timeLap_2.transform.position = Vector3 ( uiMargin,  screen.height - uiMargin - screen.height * 0.05 
-														- screen.height * 0.075, 0);
+	//timeLap_2.fontSize = screen.height * 0.05;
+	//timeLap_2.transform.position = Vector3 ( uiMargin,  screen.height - uiMargin - screen.height * 0.05 
+	//													- screen.height * 0.075, 0);
 
-	timeLap_3.fontSize = screen.height * 0.05;
-	timeLap_3.transform.position = Vector3 ( uiMargin,  screen.height - uiMargin - (screen.height * 0.05 * 2) 
-														- screen.height * 0.075, 0);
+	//timeLap_3.fontSize = screen.height * 0.05;
+	//timeLap_3.transform.position = Vector3 ( uiMargin,  screen.height - uiMargin - (screen.height * 0.05 * 2) 
+	//													- screen.height * 0.075, 0);
 
 }
 
