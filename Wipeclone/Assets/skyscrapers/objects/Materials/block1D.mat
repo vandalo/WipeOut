@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: block1D
+  m_Shader: {fileID: 4800000, guid: 4d42e77e367eea94ea6458f29e7ed6d5, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _BumpMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 3fbc2771998468e4ca440c26b334b0d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: -1}
+    - first:
+        name: _Illum
+      second:
+        m_Texture: {fileID: 2800000, guid: f6290ed56dcd5db4baff7104a47f22df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 67bf993426580b84ca5189054702ea11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: -1}
+    - first:
+        name: _diffuse
+      second:
+        m_Texture: {fileID: 2800000, guid: 67bf993426580b84ca5189054702ea11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _illumination
+      second:
+        m_Texture: {fileID: 2800000, guid: f6290ed56dcd5db4baff7104a47f22df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _normalmap
+      second:
+        m_Texture: {fileID: 2800000, guid: 3fbc2771998468e4ca440c26b334b0d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _EmissionLM
+      second: 0
+    - first:
+        name: _Shininess
+      second: 0.3375785
+    - first:
+        name: _gloss
+      second: 0.35714287
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - first:
+        name: _diffusecolor
+      second: {r: 0.31617647, g: 0.31617647, b: 0.31617647, a: 1}
+    - first:
+        name: _illumcolor
+      second: {r: 0.99264705, g: 0.81546056, b: 0.59120893, a: 1}
+    - first:
+        name: _speccolor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
