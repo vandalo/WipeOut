@@ -8,6 +8,8 @@ public class NewNewShipController : MonoBehaviour {
 	public float speed = 90F;
 	public float turnSpeed = 5F;
 
+	public float forwardRotationRegen = 2F;
+
 	public float hoverForce = 65F;
 	public float hoverHeight = 3.5F;
 
@@ -37,6 +39,17 @@ public class NewNewShipController : MonoBehaviour {
 		}
 
 		carRigidbody.AddRelativeForce (0F, 0F, powerInput * speed);
+
+		transform.Rotate (Vector3.up, turnInput * turnSpeed * Time.deltaTime);
+		print (transform.rotation.x);
+		float xRotation = transform.rotation.x;
+		if (xRotation > 0) {
+			transform.Rotate (Vector3.forward,  forwardRotationRegen * Time.deltaTime);
+		} else if (xRotation < 0) {
+			transform.Rotate (Vector3.forward, -forwardRotationRegen * Time.deltaTime);
+		}
+		transform.Rotate (Vector3.forward, -turnInput * forwardRotationRegen * Time.deltaTime);
+
 	}
 
 
