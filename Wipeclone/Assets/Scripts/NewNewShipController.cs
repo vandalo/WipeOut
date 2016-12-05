@@ -59,4 +59,33 @@ public class NewNewShipController : MonoBehaviour {
 		turnInput = Input.GetAxis ("Horizontal");
 
 	}
+
+
+	void OnTriggerEnter(Collider collider){	
+		
+	}
+
+	/*
+	void OnTriggerEnter(Collider collider){	
+		if(collider.gameObject.tag == "sortida"){
+			if(is_correct == 1){
+				lap++;
+			}
+			is_correct = 0;
+		}
+		if(collider.gameObject.tag == "control"){
+			if(is_correct == 0)
+				is_correct = -1;
+		}
+		if(collider.gameObject.tag == "arrivada"){
+			if(is_correct == 0)
+				is_correct = 1;
+		}
+		if(collider.gameObject.tag == "turbo"){
+			var rb = GetComponent<Rigidbody>();
+			rb.AddRelativeForce(0,turboSpeed,0);
+		}
+
+	}
+	*/
 }
