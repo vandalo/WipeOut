@@ -355,7 +355,7 @@ GameObject:
   - 114: {fileID: 676583873}
   - 114: {fileID: 676583872}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,7 @@ Prefab:
     - target: {fileID: 224000013980537914, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013980537914, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
@@ -574,12 +574,12 @@ Prefab:
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
@@ -895,6 +895,13 @@ MonoBehaviour:
   velocity: {fileID: 1164298873}
   acceleration: {fileID: 1901859448}
   torque: {fileID: 119145445}
+  blue: {fileID: 1517531101}
+  red: {fileID: 676583872}
+  green: {fileID: 1629431186}
+  start: {fileID: 1228250723}
+  textureBlue: {fileID: 2800000, guid: 4566557a493f942ef841f878cb2b498f, type: 3}
+  textureGreen: {fileID: 2800000, guid: e31e9923729e946da9938b9e1658791e, type: 3}
+  textureRed: {fileID: 2800000, guid: b788789abd4ebd747afeb5f494792993, type: 3}
   pointerShip: 1
 --- !u!1 &1516430840
 GameObject:
@@ -971,7 +978,7 @@ GameObject:
   - 114: {fileID: 1517531102}
   - 114: {fileID: 1517531101}
   m_Layer: 5
-  m_Name: YellowButton
+  m_Name: BlueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,7 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.88235295, b: 0, a: 1}
+  m_Color: {r: 0.209, g: 0.141, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1416,7 +1423,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1951449831
+  randomSeed: -644122899
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -3220,7 +3227,7 @@ Prefab:
     - target: {fileID: 224000013980537914, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013980537914, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
@@ -3230,12 +3237,12 @@ Prefab:
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
@@ -3618,7 +3625,7 @@ Prefab:
     - target: {fileID: 224000013980537914, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013980537914, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
@@ -3628,12 +3635,12 @@ Prefab:
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013354767488, guid: 139d7e914dbf945758376e6c90133685,
         type: 2}

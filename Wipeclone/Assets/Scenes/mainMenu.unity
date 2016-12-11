@@ -559,6 +559,7 @@ GameObject:
   - 114: {fileID: 1274568658}
   - 114: {fileID: 1274568657}
   - 114: {fileID: 1274568661}
+  - 114: {fileID: 1274568662}
   m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
@@ -655,6 +656,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPlay: {fileID: 0}
+--- !u!114 &1274568662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1274568656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9e421cad92249768a61b44f287ac4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playButton: {fileID: 815052164}
 --- !u!1 &1276915234
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +679,7 @@ GameObject:
   - 33: {fileID: 1276915238}
   - 64: {fileID: 1276915237}
   - 23: {fileID: 1276915236}
+  - 114: {fileID: 1276915235}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -673,6 +687,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1276915235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1276915234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9e421cad92249768a61b44f287ac4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playButton: {fileID: 815052164}
 --- !u!23 &1276915236
 MeshRenderer:
   m_ObjectHideFlags: 0

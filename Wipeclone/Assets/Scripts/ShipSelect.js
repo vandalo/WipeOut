@@ -7,6 +7,15 @@ public var ship4: GameObject;
 public var velocity: UI.Slider;
 public var acceleration: UI.Slider;
 public var torque: UI.Slider;
+public var blue: UI.Button;
+public var red: UI.Button;
+public var green: UI.Button;
+public var start: UI.Button;
+public var textureBlue: Texture2D;
+public var textureGreen: Texture2D;
+public var textureRed: Texture2D;
+
+
 public var pointerShip: int = 1;
 private var movment: int = 0;
 private var finishIn: boolean = true;
@@ -31,7 +40,10 @@ private var torqueShip4: float = 0.4;
 private var incrementSlider: float = 0.05;
 
 function Start () {
-
+		blue.onClick.AddListener(SetTextureBlue);
+		red.onClick.AddListener(SetTextureRed);
+		green.onClick.AddListener(SetTextureGreen);
+		start.onClick.AddListener(StartGame);
 }
 
 function Update () {
@@ -160,4 +172,41 @@ function Update () {
 	if(pointerShip == 5)pointerShip = 1;
 	else if(pointerShip == 0)pointerShip = 4;
 
+}
+
+function SetTextureBlue(){
+	var render = ship1.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureBlue);
+	render = ship2.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureBlue);
+	render = ship3.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureBlue);
+	render = ship4.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureBlue);
+}
+
+function SetTextureGreen(){
+	var render = ship1.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureGreen);
+	render = ship2.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureGreen);
+	render = ship3.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureGreen);
+	render = ship4.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureGreen);
+}
+
+function SetTextureRed(){
+	var render = ship1.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureRed);
+	render = ship2.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureRed);
+	render = ship3.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureRed);
+	render = ship4.GetComponent.<Renderer>();
+	render.material.SetTexture("_MainTex",textureRed);
+}
+
+function StartGame(){
+	SceneManager.LoadScene("Map1", LoadSceneMode.Single);
 }

@@ -17,39 +17,39 @@ public class NewNewShipController : MonoBehaviour {
 	private float powerInput;
 	private float turnInput;
 	private Rigidbody carRigidbody;
+	public static bool playing = false;
 
 	void Awake () {
 	
 		carRigidbody = GetComponent<Rigidbody> ();
-
 	}
 
 	void FixedUpdate(){
-		
-		Ray ray = new Ray (transform.position, -transform.up);
-		RaycastHit hit;
+		if (playing) {
+			Ray ray = new Ray (transform.position, -transform.up);
+			RaycastHit hit;
 
-		Debug.DrawLine (transform.position, transform.position - (transform.up * hoverHeight), Color.cyan);
+			Debug.DrawLine (transform.position, transform.position - (transform.up * hoverHeight), Color.cyan);
 
-		if(Physics.Raycast(ray, out hit, hoverHeight)) {
-			float proportionalHeight = (hoverHeight - hit.distance) / hoverHeight;
-			Vector3 appliedHoverForce = Vector3.up * proportionalHeight * hoverForce;
-			carRigidbody.AddForce (appliedHoverForce, ForceMode.Acceleration);
-			print ("hit");
+			if (Physics.Raycast (ray, out hit, hoverHeight)) {
+				float proportionalHeight = (hoverHeight - hit.distance) / hoverHeight;
+				Vector3 appliedHoverForce = Vector3.up * proportionalHeight * hoverForce;
+				carRigidbody.AddForce (appliedHoverForce, ForceMode.Acceleration);
+				print ("hit");
+			}
+
+			carRigidbody.AddRelativeForce (0F, 0F, powerInput * speed);
+
+			transform.Rotate (Vector3.up, turnInput * turnSpeed * Time.deltaTime);
+			print (transform.rotation.x);
+			float xRotation = transform.rotation.x;
+			if (xRotation > 0) {
+				transform.Rotate (Vector3.forward, forwardRotationRegen * Time.deltaTime);
+			} else if (xRotation < 0) {
+				transform.Rotate (Vector3.forward, -forwardRotationRegen * Time.deltaTime);
+			}
+			transform.Rotate (Vector3.forward, -turnInput * forwardRotationRegen * Time.deltaTime);
 		}
-
-		carRigidbody.AddRelativeForce (0F, 0F, powerInput * speed);
-
-		transform.Rotate (Vector3.up, turnInput * turnSpeed * Time.deltaTime);
-		print (transform.rotation.x);
-		float xRotation = transform.rotation.x;
-		if (xRotation > 0) {
-			transform.Rotate (Vector3.forward,  forwardRotationRegen * Time.deltaTime);
-		} else if (xRotation < 0) {
-			transform.Rotate (Vector3.forward, -forwardRotationRegen * Time.deltaTime);
-		}
-		transform.Rotate (Vector3.forward, -turnInput * forwardRotationRegen * Time.deltaTime);
-
 	}
 
 

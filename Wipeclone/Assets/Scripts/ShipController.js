@@ -9,6 +9,8 @@ public var rotationPoint: Transform;
 public var maxAngularVelocity: float;
 public var fire: ParticleSystem;
 public static var lap: int = 1;
+private var playing: boolean = false;
+
 var projectile : Transform;
 var bulletSpeed : float = 20;
 
@@ -17,24 +19,25 @@ var bulletSpeed : float = 20;
 private var is_correct: int = -1;
 
 function Start () {
-
-
+	//GUIManager variable = GetComponent<GUIManager> ();
 }
 
 function FixedUpdate() {
-	var rb = GetComponent.<Rigidbody>();
-	var turn = Input.GetAxis("Horizontal");
+	if(playing){
+		var rb = GetComponent.<Rigidbody>();
+		var turn = Input.GetAxis("Horizontal");
 
-	rb.AddTorque(rotationPoint.up * torque * turn);
+		rb.AddTorque(rotationPoint.up * torque * turn);
 
-	rb.maxAngularVelocity = maxAngularVelocity;
-	var accel = Input.GetAxis("Vertical");
+		rb.maxAngularVelocity = maxAngularVelocity;
+		var accel = Input.GetAxis("Vertical");
 
-	if(Input.GetAxis("Vertical") > 0) fire.Play();
-	else fire.Stop();
+		if(Input.GetAxis("Vertical") > 0) fire.Play();
+		else fire.Stop();
 
-	if(rb.velocity.magnitude < maxVel)
-		rb.AddRelativeForce(0,accel*speed,0);
+		if(rb.velocity.magnitude < maxVel)
+			rb.AddRelativeForce(0,accel*speed,0);
+	}
 }
 
  function Update () {
