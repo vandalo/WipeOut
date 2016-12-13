@@ -7,6 +7,10 @@ TagManager:
   - row1
   - row2
   - row3
+  - sortida
+  - arrivada
+  - control
+  - turbo
   layers:
   - Default
   - TransparentFX

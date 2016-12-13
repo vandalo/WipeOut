@@ -806,7 +806,7 @@ GameObject:
   - 33: {fileID: 1308586967}
   - 64: {fileID: 1308586966}
   - 23: {fileID: 1308586965}
-  - 114: {fileID: 1308586969}
+  - 114: {fileID: 1308586970}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -877,7 +877,7 @@ Transform:
   - {fileID: 1854175525}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &1308586969
+--- !u!114 &1308586970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308586964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716192c5ea1ac42fabc507ac803e0dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ce2faccf43db4be9b49b149dffead26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ship1: {fileID: 55947184}

@@ -14,6 +14,7 @@ function Start () {
 
 function Update () {
 	elapsedTime++;
+	if(elapsedTime > 5) elapsedTime = 0;
 	if (elapsedTime < 2){
 		row1A.GetComponent.<Renderer>().enabled = true;
 		row1B.GetComponent.<Renderer>().enabled = true;
@@ -31,14 +32,13 @@ function Update () {
 		row3A.GetComponent.<Renderer>().enabled = false;
 		row3B.GetComponent.<Renderer>().enabled = false;
 	}
-	else{
+	else if (elapsedTime < 6){
 		row1A.GetComponent.<Renderer>().enabled = false;
 		row1B.GetComponent.<Renderer>().enabled = false;
 		row2A.GetComponent.<Renderer>().enabled = false;
 		row2B.GetComponent.<Renderer>().enabled = false;
 		row3A.GetComponent.<Renderer>().enabled = true;
 		row3B.GetComponent.<Renderer>().enabled = true;
-		if(elapsedTime > 5) elapsedTime = 0;
 	}
 
 }
