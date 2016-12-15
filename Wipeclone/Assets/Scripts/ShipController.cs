@@ -17,6 +17,7 @@ public class ShipController : MonoBehaviour
 	public float turnInput;
 
 	private Rigidbody carRigidbody;
+	private float turboInput = 0f;
 
 	void Awake ()
 	{
@@ -40,7 +41,7 @@ public class ShipController : MonoBehaviour
 			carRigidbody.AddForce (appliedHoverForce, ForceMode.Acceleration);
 		} 
 		if (Physics.Raycast (ray, out hit, groundedHeight)) {
-			carRigidbody.AddRelativeForce (0F, 0F, powerInput * speed);
+			carRigidbody.AddRelativeForce (0F, 0F, powerInput * speed + turboInput * speed);
 			Quaternion wantedRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
 			Quaternion actualRotation = transform.rotation;
 			transform.rotation = Quaternion.Lerp (actualRotation, wantedRotation, Time.deltaTime * rotationInterpolation);
@@ -61,4 +62,18 @@ public class ShipController : MonoBehaviour
 		
 	}
 
+
+	void OnTriggerEnter(Collider other){
+		if (other.tag == "turbo") {
+			turboInput = 0.8f;
+			print ("TURBO ON!");
+		}
+	}
+
+	void OnTriggerExit(Collider other){
+		if (other.tag == "turbo") {
+			turboInput = 0f;
+			print ("TURBO OFF!");
+		}
+	}
 }

@@ -20,7 +20,7 @@ function Start () {
 
 function Update () {
 	elapsedTime = elapsedTime + Time.deltaTime;
-	Debug.Log(elapsedTime);
+
 	if(elapsedTime > 1.5) elapsedTime = 0;
 	if (elapsedTime < 0.25){
 		row1A.GetComponent.<Renderer>().enabled = true;

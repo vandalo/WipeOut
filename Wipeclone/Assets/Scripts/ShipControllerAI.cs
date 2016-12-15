@@ -5,16 +5,19 @@ using System.Collections.Generic;
 public class ShipControllerAI : MonoBehaviour {
 
 	public Transform pathTransform;
+	public int startingIndex = 0;
+	public string waypointTag = "waypoint";
+	public static bool playing = false;
 
 	private ShipController shipController;
 	private List<Vector3> path;
-	private int pathIndex;
+	public int pathIndex;
 	private float slowDown = 1f;
 	private GameObject debugSphere;
 	// Use this for initialization
 	void Awake () {
 		shipController = GetComponent<ShipController> ();
-		pathIndex = 2;
+		pathIndex = startingIndex;
 		Transform[] pathChilds = pathTransform.GetComponentsInChildren<Transform> ();
 		path = new List<Vector3> ();
 		for (int i = 0; i < pathChilds.Length; i++) {
@@ -23,11 +26,14 @@ public class ShipControllerAI : MonoBehaviour {
 			}
 		}
 		debugSphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+		Destroy (debugSphere.GetComponent<SphereCollider> ());
 		debugSphere.transform.localScale = Vector3.one * 10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!playing)
+			return;
 		Vector3 directionToWaypoint = transform.InverseTransformPoint(path[pathIndex]).normalized ;
 
 		directionToWaypoint = directionToWaypoint / directionToWaypoint.z;
@@ -35,13 +41,13 @@ public class ShipControllerAI : MonoBehaviour {
 		shipController.powerInput = directionToWaypoint.z * slowDown;
 		shipController.turnInput = directionToWaypoint.x;
 
-		//debugSphere.transform.position = path[pathIndex];
+		debugSphere.transform.position = path[pathIndex];
 
 		Debug.DrawLine (transform.position, transform.position + directionToWaypoint * 10);
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "waypoint") {
+		if (other.tag == waypointTag) {
 			pathIndex++;
 			if (pathIndex == path.Count) {
 				pathIndex = 0;
@@ -53,7 +59,7 @@ public class ShipControllerAI : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other){
-		if (other.tag == "slow") {
+		if (other.tag == waypointTag) {
 			slowDown = 1f;
 		}
 	}

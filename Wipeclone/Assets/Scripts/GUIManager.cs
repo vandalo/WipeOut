@@ -222,11 +222,11 @@ public class GUIManager : MonoBehaviour {
 			if (!paused) {
 				pause.enabled = true;
 				paused = true;
-				NewNewShipController.pause(true);
+				Time.timeScale = 0f;
 			} else {
 				pause.enabled = false;
 				paused = false;
-				NewNewShipController.pause(false);
+				Time.timeScale = 1.0f;
 			}
 		}
 		if (firstTimeRender) {

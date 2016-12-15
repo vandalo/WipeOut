@@ -31,6 +31,7 @@ public class SemaphorController : MonoBehaviour {
 			} else if (timer < 6) {
 				render.material.SetTexture ("_MainTex", semaphor4);
 				ShipControllerPlayer.playing = true;
+				ShipControllerAI.playing = true;
 				GUIManager.playing = true;
 			} else {
 				Destroy (semaphor);

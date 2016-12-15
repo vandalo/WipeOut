@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ShipControllerPlayer : MonoBehaviour {
 
-	public static bool playing = true;
+	public static bool playing = false;
 	private float powerInput;
 	private float turnInput;
 	private ShipController controller;
