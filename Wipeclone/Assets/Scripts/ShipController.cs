@@ -65,7 +65,7 @@ public class ShipController : MonoBehaviour
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "turbo") {
-			turboInput = 0.8f;
+			turboInput = 1.5f;
 			print ("TURBO ON!");
 		}
 	}
