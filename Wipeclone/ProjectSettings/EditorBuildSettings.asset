@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Map1.unity
   - enabled: 1
     path: Assets/Scenes/Map2.unity
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity

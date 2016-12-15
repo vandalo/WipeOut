@@ -11,6 +11,9 @@ public class GUIManager : MonoBehaviour {
 	public Text timeLap_1;
 	public Text timeLap_2;
 	public Text timeLap_3;
+	public Text timeLap_1Finish;
+	public Text timeLap_2Finish;
+	public Text timeLap_3Finish;
 	public Text pause;
 	public static bool lapChange = false;
 	public Text pressEnter;
@@ -26,7 +29,12 @@ public class GUIManager : MonoBehaviour {
 	private float timer = 0;
 	private float greenComponent = 255;
 	public static bool firstTimeRender = true;
-	private int count = 0;
+	public Transform target1;
+	public Transform target2;
+	public Transform target3;
+	private float elapsedTime = 0;
+
+
 	public GameObject ship1;
 	public GameObject ship2;
 	public GameObject ship3;
@@ -46,10 +54,14 @@ public class GUIManager : MonoBehaviour {
 	private bool paused = false;
 
 	void Start () {
+		timeLap_1Finish.enabled = false;
+		timeLap_2Finish.enabled = false;
+		timeLap_3Finish.enabled = false;
 		pause.enabled = false;
 		raceFinish = false;
 		firstTimeRender = true;
 		playing = false;
+		lapText.text = "Lap 1/3";
 		lap = 1;
 		timer = 0;
 		isCorrect = 0;
@@ -200,6 +212,7 @@ public class GUIManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		elapsedTime += Time.deltaTime;
 		if (Input.GetKeyDown (KeyCode.R)) {
 			int scene = PlayerPrefs.GetInt ("scene");
 			if(scene == 3)SceneManager.LoadScene("Map1", LoadSceneMode.Single);
@@ -217,13 +230,13 @@ public class GUIManager : MonoBehaviour {
 			}
 		}
 		if (firstTimeRender) {
-			if (count % 10 == 0) {
+			if (elapsedTime > 0.5) {
 				if (pressEnter.enabled)
 					pressEnter.enabled = false;
 				else
 					pressEnter.enabled = true;
+				elapsedTime = 0;
 			}
-			count++;
 		}
 		if (!paused) {
 			if (Input.GetKeyDown (KeyCode.Return) && firstTimeRender) {
@@ -273,18 +286,42 @@ public class GUIManager : MonoBehaviour {
 			velocityText.enabled = false;
 			cam1.enabled = true;
 			cam2.enabled = false;
+			lapText.enabled = false;
+
+			timeLap_1Finish.enabled = true;
+			timeLap_2Finish.enabled = true;
+			timeLap_3Finish.enabled = true; 
+			timeLap_1.transform.position = Vector3.MoveTowards(timeLap_1.transform.position, target1.position, 60f);
+			timeLap_2.transform.position = Vector3.MoveTowards(timeLap_2.transform.position, target2.position, 60f);
+			timeLap_3.transform.position = Vector3.MoveTowards(timeLap_3.transform.position, target3.position, 60f);
+
+			int scene = PlayerPrefs.GetInt ("scene");
+			if (scene == 3) {
+				PlayerPrefs.SetString ("time11", timeLap_1.text);
+				PlayerPrefs.SetString ("time12", timeLap_2.text);
+				PlayerPrefs.SetString ("time13", timeLap_3.text);
+			} else if (scene == 4) {
+				PlayerPrefs.SetString ("time21", timeLap_1.text);
+				PlayerPrefs.SetString ("time22", timeLap_2.text);
+				PlayerPrefs.SetString ("time23", timeLap_3.text);
+			}
 			Renderer aux = agent.GetComponent<Renderer> ();
 			aux.enabled = true;
-			if (count % 3 == 0) {
+			if (elapsedTime > 0.5) {
 				if (pressEnter.enabled)
 					pressEnter.enabled = false;
 				else
 					pressEnter.enabled = true;
+				elapsedTime = 0;
 			}
-			count++;
 			if (Input.GetKeyDown (KeyCode.Return)) {
-				PlayerPrefs.SetInt ("scene", 4);
-				SceneManager.LoadScene("Map2", LoadSceneMode.Single);
+				if (scene == 3) {
+					PlayerPrefs.SetInt ("scene", 4);
+					SceneManager.LoadScene ("Map2", LoadSceneMode.Single);
+				} else if (scene == 4) {
+					PlayerPrefs.SetInt ("scene", 5);
+					SceneManager.LoadScene ("EndGame", LoadSceneMode.Single);
+				}
 			}
 		}
 
