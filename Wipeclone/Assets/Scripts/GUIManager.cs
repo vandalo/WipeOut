@@ -200,6 +200,11 @@ public class GUIManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.R)) {
+			int scene = PlayerPrefs.GetInt ("scene");
+			if(scene == 3)SceneManager.LoadScene("Map1", LoadSceneMode.Single);
+			else if(scene == 4)SceneManager.LoadScene("Map2", LoadSceneMode.Single);
+		}
 		if (Input.GetKeyDown(KeyCode.P) && !firstTimeRender){
 			if (!paused) {
 				pause.enabled = true;
@@ -236,13 +241,19 @@ public class GUIManager : MonoBehaviour {
 				MenuMusic.playSemaphorFunction ();
 			}
 			if (playing) {
+				if (Input.GetKeyDown (KeyCode.U)) {
+					lap++;
+					lapChange = true;
+				}
 				Rigidbody rb = ship.GetComponent<Rigidbody> ();
 				vel = (int)rb.velocity.magnitude;
 				greenComponent = (float)((255.0f - vel) / 255.0f);
 				velocityText.color = new Color (180.0f, greenComponent, 0.0f);
 				velocityText.text = "" + (int)(vel*2.5f);
-
-				lapText.text = "Lap " + lap + "/3";
+				int showLap = lap;
+				if (showLap > 3)
+					showLap = 3;
+				lapText.text = "Lap " + showLap + "/3";
 				timeLap_1.text = msToTime ();
 				if (lapChange) {
 					timer = 0;
@@ -272,6 +283,7 @@ public class GUIManager : MonoBehaviour {
 			}
 			count++;
 			if (Input.GetKeyDown (KeyCode.Return)) {
+				PlayerPrefs.SetInt ("scene", 4);
 				SceneManager.LoadScene("Map2", LoadSceneMode.Single);
 			}
 		}
