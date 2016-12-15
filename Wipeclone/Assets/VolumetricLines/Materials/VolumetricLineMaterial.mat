@@ -34,4 +34,4 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.0627451, g: 1, b: 0.0627451, a: 1}
+      second: {r: 0.288979, g: 1, b: 0.062745094, a: 1}
