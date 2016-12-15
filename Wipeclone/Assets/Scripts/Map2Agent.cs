@@ -41,8 +41,6 @@ public class Map2Agent : MonoBehaviour {
 	void Update () {
 		float step = speed * Time.deltaTime;
 		float dist = Vector3.Distance(transform.position, target.position);
-		Debug.Log (dist);
-		Debug.Log (numGoal);
 		if (dist <= pathEndThreshold) {
 			numGoal++;
 		}

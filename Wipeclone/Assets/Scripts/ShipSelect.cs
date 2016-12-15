@@ -218,6 +218,7 @@ public class ShipSelect : MonoBehaviour {
 
 	void StartGame(){
 		PlayerPrefs.SetInt ("numShip", pointerShip);
+		PlayerPrefs.SetInt ("scene", 3);
 		SceneManager.LoadScene("Map1", LoadSceneMode.Single);
 	}
 }

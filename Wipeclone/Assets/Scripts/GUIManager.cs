@@ -233,6 +233,7 @@ public class GUIManager : MonoBehaviour {
 				aux.enabled = false;
 				firstTimeRender = false;
 				pressEnter.enabled = false;
+				MenuMusic.playSemaphorFunction ();
 			}
 			if (playing) {
 				Rigidbody rb = ship.GetComponent<Rigidbody> ();
@@ -276,7 +277,7 @@ public class GUIManager : MonoBehaviour {
 		}
 
 		//When you have finished 3 lap
-		if (lap > 3 || Input.GetKeyDown (KeyCode.Space)) {
+		if (lap > 3 || Input.GetKeyDown (KeyCode.F)) {
 			raceFinish = true;
 			playing = false;
 		}

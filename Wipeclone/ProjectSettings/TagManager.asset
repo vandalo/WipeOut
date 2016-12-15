@@ -11,6 +11,9 @@ TagManager:
   - arrivada
   - control
   - turbo
+  - bullet
+  - leftCollider
+  - rightCollider
   layers:
   - Default
   - TransparentFX

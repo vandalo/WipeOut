@@ -61,7 +61,14 @@ public class NewNewShipController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKey (KeyCode.T))
+			MenuMusic.playTurboFunction ();
+
 		powerInput = Input.GetAxis ("Vertical");
+		if (powerInput > 0) {
+			MenuMusic.playAudioAcceleration ();
+		} else
+			MenuMusic.stopAudioAcceleration ();
 		turnInput = Input.GetAxis ("Horizontal");
 
 	}

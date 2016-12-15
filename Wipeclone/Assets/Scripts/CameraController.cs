@@ -9,13 +9,13 @@ public class CameraController : MonoBehaviour {
 	public float interpolation;
 
 	private Vector3 offset;
-	private Quaternion rotation;
-	private Rigidbody shipRigidBody;
+	//private Quaternion rotation;
+	//private Rigidbody shipRigidBody;
 
 	void Awake (){
 		offset = transform.position - ship.transform.position;
-		rotation = transform.rotation;
-		shipRigidBody = ship.GetComponent<Rigidbody> ();
+		//rotation = transform.rotation;
+		//shipRigidBody = ship.GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame

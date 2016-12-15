@@ -12,16 +12,17 @@ public var row5A: GameObject;
 public var row5B: GameObject;
 public var row6A: GameObject;
 public var row6B: GameObject;
-private var elapsedTime: int = 0;
+private var elapsedTime: float = 0;
 
 function Start () {
 
 }
 
 function Update () {
-	elapsedTime++;
-	if(elapsedTime == 6) elapsedTime = 0;
-	if (elapsedTime < 1){
+	elapsedTime = elapsedTime + Time.deltaTime;
+	Debug.Log(elapsedTime);
+	if(elapsedTime > 1.5) elapsedTime = 0;
+	if (elapsedTime < 0.25){
 		row1A.GetComponent.<Renderer>().enabled = true;
 		row1B.GetComponent.<Renderer>().enabled = true;
 		row2A.GetComponent.<Renderer>().enabled = true;
@@ -35,7 +36,7 @@ function Update () {
 		row6A.GetComponent.<Renderer>().enabled = true;
 		row6B.GetComponent.<Renderer>().enabled = true;
 	}
-	else if (elapsedTime < 2){
+	else if (elapsedTime < 0.5){
 		row1A.GetComponent.<Renderer>().enabled = true;
 		row1B.GetComponent.<Renderer>().enabled = true;
 		row2A.GetComponent.<Renderer>().enabled = true;
@@ -49,7 +50,7 @@ function Update () {
 		row6A.GetComponent.<Renderer>().enabled = false;
 		row6B.GetComponent.<Renderer>().enabled = false;
 	}
-	else if (elapsedTime < 3){
+	else if (elapsedTime < 0.75){
 		row1A.GetComponent.<Renderer>().enabled = false;
 		row1B.GetComponent.<Renderer>().enabled = false;
 		row2A.GetComponent.<Renderer>().enabled = true;
@@ -63,7 +64,7 @@ function Update () {
 		row6A.GetComponent.<Renderer>().enabled = false;
 		row6B.GetComponent.<Renderer>().enabled = false;
 	}
-	else if (elapsedTime < 4){
+	else if (elapsedTime < 1){
 		row1A.GetComponent.<Renderer>().enabled = false;
 		row1B.GetComponent.<Renderer>().enabled = false;
 		row2A.GetComponent.<Renderer>().enabled = false;
@@ -77,7 +78,7 @@ function Update () {
 		row6A.GetComponent.<Renderer>().enabled = true;
 		row6B.GetComponent.<Renderer>().enabled = true;
 	}
-	else if(elapsedTime < 5){
+	else if(elapsedTime < 1.25){
 		row1A.GetComponent.<Renderer>().enabled = true;
 		row1B.GetComponent.<Renderer>().enabled = true;
 		row2A.GetComponent.<Renderer>().enabled = false;
@@ -91,7 +92,7 @@ function Update () {
 		row6A.GetComponent.<Renderer>().enabled = true;
 		row6B.GetComponent.<Renderer>().enabled = true;
 	}
-	else if(elapsedTime < 6){
+	else if(elapsedTime < 1.5){
 		row1A.GetComponent.<Renderer>().enabled = true;
 		row1B.GetComponent.<Renderer>().enabled = true;
 		row2A.GetComponent.<Renderer>().enabled = true;

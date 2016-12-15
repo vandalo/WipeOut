@@ -33970,7 +33970,7 @@ MonoBehaviour:
   target20: {fileID: 1325579039}
   target21: {fileID: 1060535772}
   target22: {fileID: 1383560061}
-  speed: 300
+  speed: 100
   numGoal: 1
 --- !u!23 &1388021599
 MeshRenderer:
@@ -37059,7 +37059,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468729911}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -250.62216, y: 22.2, z: -631.28}
+  m_LocalPosition: {x: -250.62216, y: 22.2, z: -631.02}
   m_LocalScale: {x: 3, y: 1.5, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
@@ -37225,7 +37225,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1483480681}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -250.62216, y: 22.2, z: -639}
+  m_LocalPosition: {x: -250.62216, y: 22.2, z: -638.74}
   m_LocalScale: {x: 3, y: 1.5, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
@@ -51917,7 +51917,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1973155701}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -250.62216, y: 22.2, z: -624.02}
+  m_LocalPosition: {x: -250.62216, y: 22.2, z: -623.76}
   m_LocalScale: {x: 3, y: 1.5, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
