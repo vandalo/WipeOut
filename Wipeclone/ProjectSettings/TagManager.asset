@@ -16,6 +16,8 @@ TagManager:
   - rightCollider
   - waypoint1
   - waypoint2
+  - waypoint
+  - Ship
   layers:
   - Default
   - TransparentFX

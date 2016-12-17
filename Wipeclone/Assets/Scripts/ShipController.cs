@@ -27,7 +27,9 @@ public class ShipController : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		
+		if (powerInput > 0)
+			MenuMusic.playAudioAcceleration ();
+
 		Ray ray = new Ray (transform.position, -transform.up);
 		RaycastHit hit;
 
@@ -67,7 +69,7 @@ public class ShipController : MonoBehaviour
 		if (other.tag == "turbo") {
 			turboInput = 1.5f;
 			print ("TURBO ON!");
-		}
+		} 
 	}
 
 	void OnTriggerExit(Collider other){

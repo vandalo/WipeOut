@@ -16,9 +16,11 @@ public class ShipSelect : MonoBehaviour {
 	public Button red;
 	public Button green;
 	public Button start;
+	public Button yellow;
 	public Texture2D textureBlue;
 	public Texture2D textureGreen;
 	public Texture2D textureRed;
+	public Texture2D textureYellow;
 
 	public int pointerShip = 1;
 	private int movment = 0;
@@ -26,20 +28,20 @@ public class ShipSelect : MonoBehaviour {
 	private bool finishOut = true;
 
 	private float velocityShip1 = 0.8f;
-	private float accelerationShip1 = 0.8f;
-	private float torqueShip1 = 0.8f;
+	private float accelerationShip1 = 0.7f;
+	private float torqueShip1 = 0.7f;
 
-	private float velocityShip2 = 0.5f;
-	private float accelerationShip2 = 0.6f;
-	private float torqueShip2 = 0.8f;
+	private float velocityShip2 = 0.7f;
+	private float accelerationShip2 = 1f;
+	private float torqueShip2 = 0.5f;
 
-	private float velocityShip3 = 0.2f;
-	private float accelerationShip3 = 0.2f;
-	private float torqueShip3 = 0.2f;
+	private float velocityShip3 = 0.7f;
+	private float accelerationShip3 = 0.5f;
+	private float torqueShip3 = 1f;
 
-	private float velocityShip4 = 0.4f;
-	private float accelerationShip4 = 0.4f;
-	private float torqueShip4 = 0.4f;
+	private float velocityShip4 = 1f;
+	private float accelerationShip4 = 0.7f;
+	private float torqueShip4 = 0.5f;
 
 	private float incrementSlider = 0.05f;
 
@@ -47,6 +49,7 @@ public class ShipSelect : MonoBehaviour {
 		blue.onClick.AddListener(SetTextureBlue);
 		red.onClick.AddListener(SetTextureRed);
 		green.onClick.AddListener(SetTextureGreen);
+		yellow.onClick.AddListener(SetTextureYellow);
 		start.onClick.AddListener(StartGame);
 	}
 
@@ -214,6 +217,18 @@ public class ShipSelect : MonoBehaviour {
 		render = ship4.GetComponent<Renderer>();
 		render.material.SetTexture("_MainTex",textureRed);
 		PlayerPrefs.SetInt("shipColor", 1);
+	}
+
+	void SetTextureYellow(){
+		Renderer render = ship1.GetComponent<Renderer>();
+		render.material.SetTexture("_MainTex",textureYellow);
+		render = ship2.GetComponent<Renderer>();
+		render.material.SetTexture("_MainTex",textureYellow);
+		render = ship3.GetComponent<Renderer>();
+		render.material.SetTexture("_MainTex",textureYellow);
+		render = ship4.GetComponent<Renderer>();
+		render.material.SetTexture("_MainTex",textureYellow);
+		PlayerPrefs.SetInt("shipColor", 4);
 	}
 
 	void StartGame(){

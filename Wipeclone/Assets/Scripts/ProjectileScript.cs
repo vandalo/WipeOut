@@ -17,5 +17,13 @@ public class ProjectileScript : MonoBehaviour {
 	void Update () {
 
 	}
+		
+	void OnTriggerEnter(Collider other) {
+		if (other.tag == "Ship") {
+			Rigidbody rb = other.gameObject.GetComponent<Rigidbody> ();
+			rb.velocity = new Vector3 (0f, 0f, 0f);
+			Destroy (myRB);
+		}
+	}
 
 }

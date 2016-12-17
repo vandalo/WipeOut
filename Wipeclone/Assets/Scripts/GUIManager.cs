@@ -25,6 +25,7 @@ public class GUIManager : MonoBehaviour {
 	public Texture2D textureBlue;
 	public Texture2D textureRed;
 	public Texture2D textureGreen;
+	public Texture2D textureYellow;
 	public static int lap = 0;
 	private float timer = 0;
 	private float greenComponent = 255;
@@ -50,6 +51,11 @@ public class GUIManager : MonoBehaviour {
 	public GameObject enemy2ship3;
 	public GameObject enemy2ship4;
 
+	public GameObject enemy3ship1;
+	public GameObject enemy3ship2;
+	public GameObject enemy3ship3;
+	public GameObject enemy3ship4;
+
 	public static int isCorrect = 0;
 	private bool paused = false;
 
@@ -64,7 +70,7 @@ public class GUIManager : MonoBehaviour {
 		lapText.text = "Lap 1/3";
 		lap = 1;
 		timer = 0;
-		isCorrect = 0;
+		isCorrect = -1;
 		velocityText.enabled = false;
 		lapText.enabled = false;
 		timeLap_1.enabled = false;
@@ -75,6 +81,7 @@ public class GUIManager : MonoBehaviour {
 		GameObject ship = ship1;
 		GameObject enemy1ship = ship1;
 		GameObject enemy2ship = ship1;
+		GameObject enemy3ship = ship1;
 		int numShip = PlayerPrefs.GetInt ("numShip");
 		int color = PlayerPrefs.GetInt ("shipColor");
 		Debug.Log (numShip);
@@ -95,6 +102,11 @@ public class GUIManager : MonoBehaviour {
 			Destroy (enemy2ship4);
 			enemy2ship = enemy2ship3;
 
+			Destroy (enemy3ship1);
+			Destroy (enemy3ship2);
+			Destroy (enemy3ship3);
+			enemy3ship = enemy3ship4;
+
 			break;
 		case 2:
 			Destroy (ship1);
@@ -111,6 +123,11 @@ public class GUIManager : MonoBehaviour {
 			Destroy (enemy2ship2);
 			Destroy (enemy2ship3);
 			enemy2ship = enemy2ship4;
+
+			Destroy (enemy3ship4);
+			Destroy (enemy3ship2);
+			Destroy (enemy3ship3);
+			enemy3ship = enemy3ship1;
 			break;
 		case 3:
 			Destroy (ship1);
@@ -127,6 +144,11 @@ public class GUIManager : MonoBehaviour {
 			Destroy (enemy2ship2);
 			Destroy (enemy2ship3);
 			enemy2ship = enemy2ship1;
+
+			Destroy (enemy3ship4);
+			Destroy (enemy3ship1);
+			Destroy (enemy3ship3);
+			enemy3ship = enemy3ship2;
 			break;
 		case 4:
 			Destroy (ship1);
@@ -143,6 +165,11 @@ public class GUIManager : MonoBehaviour {
 			Destroy (enemy2ship1);
 			Destroy (enemy2ship3);
 			enemy2ship = enemy2ship2;
+
+			Destroy (enemy3ship4);
+			Destroy (enemy3ship1);
+			Destroy (enemy3ship2);
+			enemy3ship = enemy3ship3;
 			break;
 		default:
 			break;
@@ -151,8 +178,9 @@ public class GUIManager : MonoBehaviour {
 		Renderer render = ship.GetComponent<Renderer>();
 		Renderer render1 = enemy1ship.GetComponent<Renderer>();
 		Renderer render2 = enemy2ship.GetComponent<Renderer>();
+		Renderer render3 = enemy3ship.GetComponent<Renderer>();
 
-		int rand = Random.Range(1, 2);
+		int rand = Random.Range(1, 3);
 		switch (color) {
 		case 1:
 			render.material.SetTexture ("_MainTex", textureRed);
@@ -160,14 +188,17 @@ public class GUIManager : MonoBehaviour {
 				case 1:
 					render1.material.SetTexture ("_MainTex", textureGreen);
 					render2.material.SetTexture ("_MainTex", textureBlue);
+					render3.material.SetTexture ("_MainTex", textureYellow);
 					break;
 				case 2:
 					render2.material.SetTexture ("_MainTex", textureGreen);
-					render1.material.SetTexture ("_MainTex", textureBlue);
+					render1.material.SetTexture ("_MainTex", textureYellow);
+					render3.material.SetTexture ("_MainTex", textureBlue);
 					break;
 				default:
-					render1.material.SetTexture ("_MainTex", textureGreen);
+					render1.material.SetTexture ("_MainTex", textureYellow);
 					render2.material.SetTexture ("_MainTex", textureBlue);
+					render3.material.SetTexture ("_MainTex", textureGreen);
 					break;
 			}
 			break;
@@ -177,14 +208,17 @@ public class GUIManager : MonoBehaviour {
 			case 1:
 				render1.material.SetTexture ("_MainTex", textureRed);
 				render2.material.SetTexture ("_MainTex", textureBlue);
+				render3.material.SetTexture ("_MainTex", textureYellow);
 				break;
 			case 2:
-				render2.material.SetTexture ("_MainTex", textureRed);
+				render2.material.SetTexture ("_MainTex", textureYellow);
 				render1.material.SetTexture ("_MainTex", textureBlue);
+				render3.material.SetTexture ("_MainTex", textureRed);
 				break;
 			default:
 				render1.material.SetTexture ("_MainTex", textureRed);
-				render2.material.SetTexture ("_MainTex", textureBlue);
+				render2.material.SetTexture ("_MainTex", textureYellow);
+				render3.material.SetTexture ("_MainTex", textureBlue);
 				break;
 			}
 			break;
@@ -194,14 +228,37 @@ public class GUIManager : MonoBehaviour {
 			case 1:
 				render1.material.SetTexture ("_MainTex", textureGreen);
 				render2.material.SetTexture ("_MainTex", textureRed);
+				render3.material.SetTexture ("_MainTex", textureYellow);
 				break;
 			case 2:
-				render2.material.SetTexture ("_MainTex", textureGreen);
+				render2.material.SetTexture ("_MainTex", textureYellow);
 				render1.material.SetTexture ("_MainTex", textureRed);
+				render3.material.SetTexture ("_MainTex", textureGreen);
 				break;
 			default:
 				render1.material.SetTexture ("_MainTex", textureGreen);
+				render2.material.SetTexture ("_MainTex", textureYellow);
+				render3.material.SetTexture ("_MainTex", textureRed);
+				break;
+			}
+			break;
+		case 4:
+			render.material.SetTexture("_MainTex",textureYellow);
+			switch(rand){
+			case 1:
+				render1.material.SetTexture ("_MainTex", textureGreen);
 				render2.material.SetTexture ("_MainTex", textureRed);
+				render3.material.SetTexture ("_MainTex", textureBlue);
+				break;
+			case 2:
+				render2.material.SetTexture ("_MainTex", textureGreen);
+				render1.material.SetTexture ("_MainTex", textureBlue);
+				render3.material.SetTexture ("_MainTex", textureRed);
+				break;
+			default:
+				render1.material.SetTexture ("_MainTex", textureBlue);
+				render2.material.SetTexture ("_MainTex", textureRed);
+				render3.material.SetTexture ("_MainTex", textureGreen);
 				break;
 			}
 			break;

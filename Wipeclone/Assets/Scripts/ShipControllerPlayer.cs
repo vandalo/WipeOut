@@ -23,4 +23,13 @@ public class ShipControllerPlayer : MonoBehaviour {
 			controller.turnInput = 0;
 		}
 	}
+
+	void OnTriggerEnter(Collider other){
+		if (other.tag == "turbo") {
+			MenuMusic.playTurboFunction ();
+		} else {
+			GUIManager.colisionShip (other);
+		}
+	}
+
 }
