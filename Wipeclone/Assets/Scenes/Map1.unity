@@ -133,7 +133,7 @@ GameObject:
   - 4: {fileID: 58797585}
   - 33: {fileID: 58797587}
   - 23: {fileID: 58797586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - 4: {fileID: 65337781}
   - 198: {fileID: 65337783}
   - 199: {fileID: 65337782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,13 +2069,12 @@ GameObject:
   - 4: {fileID: 73635497}
   - 65: {fileID: 73635496}
   - 54: {fileID: 73635495}
-  - 114: {fileID: 73635498}
   - 114: {fileID: 73635500}
-  - 114: {fileID: 73635499}
   - 114: {fileID: 73635501}
-  m_Layer: 0
+  - 114: {fileID: 73635498}
+  m_Layer: 9
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2123,6 +2122,7 @@ Transform:
   - {fileID: 782140740}
   - {fileID: 2044657028}
   - {fileID: 2130379900}
+  - {fileID: 1934159910}
   m_Father: {fileID: 0}
   m_RootOrder: 13
 --- !u!114 &73635498
@@ -2138,22 +2138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunPoss: {fileID: 2130379900}
   bullet: {fileID: 1000013029101144, guid: f9bf6709ace394d69a0d3ca86e3b7315, type: 2}
-  fireRate: 30
---- !u!114 &73635499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 73635494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c23c510c0ccdc40dbbc1544062c25651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathTransform: {fileID: 0}
-  startingIndex: 0
-  waypointTag: waypoint
-  pathIndex: 0
+  fireRate: 1
 --- !u!114 &73635500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,6 +2159,7 @@ MonoBehaviour:
   rotationInterpolation: 4
   powerInput: 0
   turnInput: 0
+  damage: 0
 --- !u!114 &73635501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,7 +2377,7 @@ GameObject:
   - 4: {fileID: 156090728}
   - 33: {fileID: 156090730}
   - 23: {fileID: 156090729}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2538,9 +2524,10 @@ GameObject:
   - 114: {fileID: 188407116}
   - 114: {fileID: 188407117}
   - 114: {fileID: 188407118}
-  m_Layer: 0
+  - 114: {fileID: 188407119}
+  m_Layer: 9
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2565,6 +2552,7 @@ MonoBehaviour:
   rotationInterpolation: 4
   powerInput: 0
   turnInput: 0
+  damage: 0
 --- !u!54 &188407113
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2622,9 +2610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a81b6f0f1a5f42f6a84545d9ac0c5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunPoss: {fileID: 1962826828}
-  bullet: {fileID: 1000013029101144, guid: f9bf6709ace394d69a0d3ca86e3b7315, type: 2}
-  fireRate: 1
 --- !u!114 &188407117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,6 +2630,7 @@ MonoBehaviour:
   rotationInterpolation: 4
   powerInput: 0
   turnInput: 0
+  damage: 0
 --- !u!114 &188407118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2656,6 +2642,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70a3d10e81294b028a74497850e26d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &188407119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188407111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962ecee035fab48e2bd4c3284280b265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPoss: {fileID: 1962826828}
+  bullet: {fileID: 1000013029101144, guid: f9bf6709ace394d69a0d3ca86e3b7315, type: 2}
+  fireRate: 1
 --- !u!1 &244424384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,7 +3092,7 @@ GameObject:
   - 4: {fileID: 278673436}
   - 198: {fileID: 278673438}
   - 199: {fileID: 278673437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4893,7 +4893,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 310562353}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4923,7 +4923,7 @@ GameObject:
   - 4: {fileID: 319286317}
   - 33: {fileID: 319286319}
   - 23: {fileID: 319286318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5061,7 +5061,7 @@ GameObject:
   - 4: {fileID: 402504574}
   - 198: {fileID: 402504576}
   - 199: {fileID: 402504575}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6864,7 +6864,7 @@ GameObject:
   - 4: {fileID: 405345568}
   - 198: {fileID: 405345570}
   - 199: {fileID: 405345569}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8662,6 +8662,208 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013972602898, guid: 035460565d22f4052874276d0e7d6f85,
     type: 2}
   m_PrefabInternal: {fileID: 1480212107}
+--- !u!1001 &443384594
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -554.59235
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3845.2712
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8191.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010694809708, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_Name
+      value: Path 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012657957768, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 366.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011501570714, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 255.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011501570714, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014008807746, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -69.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014008807746, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010812293152, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -148.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010812293152, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 16.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013833524120, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -662.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013833524120, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013411009744, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -820.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014180848070, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -801.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014180848070, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -189.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010831822846, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010831822846, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -642.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012334765692, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -282.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012334765692, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011355517070, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -137.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011355517070, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -257.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010883725168, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -325.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015068184, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 48.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015068184, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -463.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010738849376, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 168.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010738849376, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -514.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014214959812, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 321.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012236359660, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010413337842, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010174827452, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011686802450, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013869591348, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011686952038, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012985170572, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012213369498, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014280840028, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010686998472, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012162746082, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012436523016, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014081720622, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012345877166, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_TagString
+      value: waypoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010883725168, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -20.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7c51b62e71ea34b20b9a15def553c1f0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &445620605
 GameObject:
   m_ObjectHideFlags: 0
@@ -8740,7 +8942,7 @@ GameObject:
   - 4: {fileID: 446231480}
   - 33: {fileID: 446231482}
   - 23: {fileID: 446231481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9040,6 +9242,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1797353439}
   m_RootOrder: 9
+--- !u!1 &525086080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 525086081}
+  - 33: {fileID: 525086084}
+  - 65: {fileID: 525086083}
+  - 114: {fileID: 525086082}
+  m_Layer: 8
+  m_Name: EnemyDetector
+  m_TagString: enemydetector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &525086081
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525086080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 0, z: 15.61}
+  m_LocalScale: {x: 1.0000006, y: 0.99999994, z: 3.71}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1147819369}
+  m_RootOrder: 5
+--- !u!114 &525086082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525086080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b3cd13dc7504dddac84dcae51cfe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &525086083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525086080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 7.77}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &525086084
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525086080}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &538289350
 Prefab:
   m_ObjectHideFlags: 0
@@ -9098,6 +9361,10 @@ Prefab:
     - target: {fileID: 4000013941097316, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -166.182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011694134362, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 23.32537
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
@@ -9189,7 +9456,7 @@ GameObject:
   - 4: {fileID: 584749266}
   - 33: {fileID: 584749268}
   - 23: {fileID: 584749267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9258,7 +9525,7 @@ GameObject:
   - 4: {fileID: 601696218}
   - 198: {fileID: 601696220}
   - 199: {fileID: 601696219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11325,7 +11592,7 @@ GameObject:
   - 4: {fileID: 706481958}
   - 198: {fileID: 706481960}
   - 199: {fileID: 706481959}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13180,6 +13447,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 035460565d22f4052874276d0e7d6f85, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &743729173 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000013463138316, guid: 7c51b62e71ea34b20b9a15def553c1f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 443384594}
 --- !u!1 &744026999
 GameObject:
   m_ObjectHideFlags: 0
@@ -13190,7 +13462,7 @@ GameObject:
   - 4: {fileID: 744027000}
   - 198: {fileID: 744027002}
   - 199: {fileID: 744027001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15003,7 +15275,7 @@ GameObject:
   - 4: {fileID: 782140740}
   - 33: {fileID: 782140742}
   - 23: {fileID: 782140741}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15115,6 +15387,8 @@ MonoBehaviour:
   target1: {fileID: 93297645}
   target2: {fileID: 43067136}
   target3: {fileID: 2093654464}
+  elapsedTime: 0
+  damageOverlay: {fileID: 1133265247}
   ship1: {fileID: 319286316}
   ship2: {fileID: 2101784731}
   ship3: {fileID: 1020787139}
@@ -15211,6 +15485,7 @@ RectTransform:
   - {fileID: 43067136}
   - {fileID: 810210608}
   - {fileID: 2093654464}
+  - {fileID: 1133265246}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
@@ -15376,7 +15651,7 @@ GameObject:
   - 4: {fileID: 826021763}
   - 198: {fileID: 826021765}
   - 199: {fileID: 826021764}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17274,7 +17549,7 @@ GameObject:
   - 4: {fileID: 919663514}
   - 198: {fileID: 919663516}
   - 199: {fileID: 919663515}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19245,7 +19520,7 @@ GameObject:
   - 4: {fileID: 1020787140}
   - 33: {fileID: 1020787145}
   - 23: {fileID: 1020787144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19477,7 +19752,7 @@ GameObject:
   - 4: {fileID: 1052789307}
   - 198: {fileID: 1052789309}
   - 199: {fileID: 1052789308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21280,7 +21555,7 @@ GameObject:
   - 4: {fileID: 1076161865}
   - 198: {fileID: 1076161867}
   - 199: {fileID: 1076161866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23083,7 +23358,7 @@ GameObject:
   - 4: {fileID: 1077878467}
   - 198: {fileID: 1077878469}
   - 199: {fileID: 1077878468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25000,6 +25275,74 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 035460565d22f4052874276d0e7d6f85, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1133265245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1133265246}
+  - 222: {fileID: 1133265248}
+  - 114: {fileID: 1133265247}
+  m_Layer: 5
+  m_Name: DamageOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1133265246
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133265245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7.91, y: 5.39, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 786509174}
+  m_RootOrder: 13
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -700, y: -350}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1133265247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133265245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.88235295, g: 0.08434254, b: 0.08434254, a: 0.162}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1133265248
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133265245}
 --- !u!1001 &1134777057
 Prefab:
   m_ObjectHideFlags: 0
@@ -25072,13 +25415,12 @@ GameObject:
   - 4: {fileID: 1147819369}
   - 65: {fileID: 1147819368}
   - 54: {fileID: 1147819367}
-  - 114: {fileID: 1147819366}
   - 114: {fileID: 1147819365}
-  - 114: {fileID: 1147819364}
   - 114: {fileID: 1147819363}
-  m_Layer: 0
+  - 114: {fileID: 1147819364}
+  m_Layer: 9
   m_Name: Enemy3
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25094,9 +25436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23c510c0ccdc40dbbc1544062c25651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathTransform: {fileID: 1584853842}
+  pathTransform: {fileID: 743729173}
   startingIndex: 2
-  waypointTag: waypoint2
+  waypointTag: waypoint3
   pathIndex: 0
 --- !u!114 &1147819364
 MonoBehaviour:
@@ -25106,13 +25448,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147819362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c23c510c0ccdc40dbbc1544062c25651, type: 3}
+  m_Script: {fileID: 11500000, guid: 962ecee035fab48e2bd4c3284280b265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathTransform: {fileID: 0}
-  startingIndex: 0
-  waypointTag: waypoint
-  pathIndex: 0
+  gunPoss: {fileID: 1739687245}
+  bullet: {fileID: 1000013029101144, guid: f9bf6709ace394d69a0d3ca86e3b7315, type: 2}
+  fireRate: 1
 --- !u!114 &1147819365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25133,20 +25474,7 @@ MonoBehaviour:
   rotationInterpolation: 4
   powerInput: 0
   turnInput: 0
---- !u!114 &1147819366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147819362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962ecee035fab48e2bd4c3284280b265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunPoss: {fileID: 1739687245}
-  bullet: {fileID: 1000013029101144, guid: f9bf6709ace394d69a0d3ca86e3b7315, type: 2}
-  fireRate: 30
+  damage: 0
 --- !u!54 &1147819367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25190,6 +25518,7 @@ Transform:
   - {fileID: 58797585}
   - {fileID: 2116474437}
   - {fileID: 1739687245}
+  - {fileID: 525086081}
   m_Father: {fileID: 0}
   m_RootOrder: 14
 --- !u!1 &1176436707
@@ -25410,7 +25739,7 @@ GameObject:
   - 4: {fileID: 1247783667}
   - 198: {fileID: 1247783669}
   - 199: {fileID: 1247783668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27496,7 +27825,7 @@ GameObject:
   - 4: {fileID: 1304279309}
   - 198: {fileID: 1304279311}
   - 199: {fileID: 1304279310}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29671,7 +30000,7 @@ GameObject:
   - 4: {fileID: 1450113364}
   - 198: {fileID: 1450113366}
   - 199: {fileID: 1450113365}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31853,6 +32182,10 @@ Prefab:
       propertyPath: m_Name
       value: Turbo 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4000011694134362, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 23.32537
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
   m_IsPrefabParent: 0
@@ -31938,7 +32271,7 @@ GameObject:
   - 4: {fileID: 1493883724}
   - 198: {fileID: 1493883726}
   - 199: {fileID: 1493883725}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33844,6 +34177,10 @@ Prefab:
       propertyPath: m_Name
       value: Turbo 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4000011694134362, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 23.32537
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
   m_IsPrefabParent: 0
@@ -34054,7 +34391,7 @@ GameObject:
   - 4: {fileID: 1571380726}
   - 33: {fileID: 1571380728}
   - 23: {fileID: 1571380727}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34354,7 +34691,7 @@ GameObject:
   - 4: {fileID: 1615964628}
   - 198: {fileID: 1615964630}
   - 199: {fileID: 1615964629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36219,7 +36556,7 @@ GameObject:
   - 4: {fileID: 1633156428}
   - 33: {fileID: 1633156430}
   - 23: {fileID: 1633156429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36447,6 +36784,67 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013972602898, guid: 035460565d22f4052874276d0e7d6f85,
     type: 2}
   m_PrefabInternal: {fileID: 1661167705}
+--- !u!1 &1668702287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1668702288}
+  - 33: {fileID: 1668702291}
+  - 65: {fileID: 1668702290}
+  - 114: {fileID: 1668702289}
+  m_Layer: 8
+  m_Name: EnemyDetector
+  m_TagString: enemydetector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668702288
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668702287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 15.61}
+  m_LocalScale: {x: 1, y: 1, z: 3.71}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1681023660}
+  m_RootOrder: 5
+--- !u!114 &1668702289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668702287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b3cd13dc7504dddac84dcae51cfe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1668702290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668702287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 7.77}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1668702291
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668702287}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1669941506
 GameObject:
   m_ObjectHideFlags: 0
@@ -36520,13 +36918,12 @@ GameObject:
   - 4: {fileID: 1681023660}
   - 65: {fileID: 1681023659}
   - 54: {fileID: 1681023658}
-  - 114: {fileID: 1681023661}
   - 114: {fileID: 1681023663}
-  - 114: {fileID: 1681023662}
   - 114: {fileID: 1681023664}
-  m_Layer: 0
+  - 114: {fileID: 1681023661}
+  m_Layer: 9
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36574,6 +36971,7 @@ Transform:
   - {fileID: 156090728}
   - {fileID: 2089950566}
   - {fileID: 310562353}
+  - {fileID: 1668702288}
   m_Father: {fileID: 0}
   m_RootOrder: 12
 --- !u!114 &1681023661
@@ -36589,22 +36987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunPoss: {fileID: 310562353}
   bullet: {fileID: 1000013029101144, guid: f9bf6709ace394d69a0d3ca86e3b7315, type: 2}
-  fireRate: 30
---- !u!114 &1681023662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1681023657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c23c510c0ccdc40dbbc1544062c25651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathTransform: {fileID: 0}
-  startingIndex: 0
-  waypointTag: waypoint
-  pathIndex: 0
+  fireRate: 1
 --- !u!114 &1681023663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36625,6 +37008,7 @@ MonoBehaviour:
   rotationInterpolation: 4
   powerInput: 0
   turnInput: 0
+  damage: 0
 --- !u!114 &1681023664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36679,6 +37063,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4000011694134362, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 23.32537
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 624fbfdec5b624a26a4f5d52f3136363, type: 2}
   m_IsPrefabParent: 0
@@ -36697,7 +37085,7 @@ GameObject:
   - 4: {fileID: 1716218457}
   - 198: {fileID: 1716218459}
   - 199: {fileID: 1716218458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38505,7 +38893,7 @@ GameObject:
   - 4: {fileID: 1729220589}
   - 198: {fileID: 1729220591}
   - 199: {fileID: 1729220590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40380,7 +40768,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1739687245}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40478,7 +40866,7 @@ GameObject:
   - 4: {fileID: 1760648616}
   - 198: {fileID: 1760648618}
   - 199: {fileID: 1760648617}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42281,7 +42669,7 @@ GameObject:
   - 4: {fileID: 1761063416}
   - 33: {fileID: 1761063418}
   - 23: {fileID: 1761063417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42474,7 +42862,7 @@ GameObject:
   - 4: {fileID: 1778843428}
   - 198: {fileID: 1778843430}
   - 199: {fileID: 1778843429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44321,7 +44709,7 @@ GameObject:
   - 4: {fileID: 1810709533}
   - 33: {fileID: 1810709535}
   - 23: {fileID: 1810709534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44459,7 +44847,7 @@ GameObject:
   - 4: {fileID: 1822171531}
   - 33: {fileID: 1822171533}
   - 23: {fileID: 1822171532}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44530,7 +44918,7 @@ GameObject:
   - 4: {fileID: 1826922288}
   - 198: {fileID: 1826922290}
   - 199: {fileID: 1826922289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46526,6 +46914,67 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930571492}
   m_Mesh: {fileID: 4300000, guid: e5be04fe5fb6a46aa8e71904775db5b8, type: 3}
+--- !u!1 &1934159909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1934159910}
+  - 33: {fileID: 1934159913}
+  - 65: {fileID: 1934159912}
+  - 114: {fileID: 1934159911}
+  m_Layer: 8
+  m_Name: EnemyDetector
+  m_TagString: enemydetector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934159910
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1934159909}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0, z: 15.61}
+  m_LocalScale: {x: 1.0000006, y: 0.99999994, z: 3.71}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 73635497}
+  m_RootOrder: 5
+--- !u!114 &1934159911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1934159909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b3cd13dc7504dddac84dcae51cfe64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1934159912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1934159909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 7.77}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1934159913
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1934159909}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1955777537
 Prefab:
   m_ObjectHideFlags: 0
@@ -46596,7 +47045,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1962826828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46780,7 +47229,7 @@ GameObject:
   - 124: {fileID: 1993478827}
   - 81: {fileID: 1993478826}
   - 45: {fileID: 1993478830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -47019,7 +47468,7 @@ GameObject:
   - 4: {fileID: 2044657028}
   - 33: {fileID: 2044657030}
   - 23: {fileID: 2044657029}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47229,7 +47678,7 @@ GameObject:
   - 4: {fileID: 2068684260}
   - 198: {fileID: 2068684262}
   - 199: {fileID: 2068684261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49099,7 +49548,7 @@ GameObject:
   - 4: {fileID: 2089950566}
   - 33: {fileID: 2089950568}
   - 23: {fileID: 2089950567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49201,7 +49650,7 @@ GameObject:
   - 4: {fileID: 2101784732}
   - 33: {fileID: 2101784734}
   - 23: {fileID: 2101784733}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49270,7 +49719,7 @@ GameObject:
   - 4: {fileID: 2116474437}
   - 33: {fileID: 2116474439}
   - 23: {fileID: 2116474438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Example_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49339,7 +49788,7 @@ GameObject:
   - 4: {fileID: 2124268344}
   - 198: {fileID: 2124268346}
   - 199: {fileID: 2124268345}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipFireParticleSistem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51140,7 +51589,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2130379900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

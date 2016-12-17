@@ -18,6 +18,7 @@ public class ShipController : MonoBehaviour
 
 	private Rigidbody carRigidbody;
 	private float turboInput = 0f;
+	public float damage = 0f;
 
 	void Awake ()
 	{
@@ -43,7 +44,7 @@ public class ShipController : MonoBehaviour
 			carRigidbody.AddForce (appliedHoverForce, ForceMode.Acceleration);
 		} 
 		if (Physics.Raycast (ray, out hit, groundedHeight)) {
-			carRigidbody.AddRelativeForce (0F, 0F, powerInput * speed + turboInput * speed);
+			carRigidbody.AddRelativeForce (0F, 0F, (powerInput * speed + turboInput * speed) * ( 1f -damage ));
 			Quaternion wantedRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
 			Quaternion actualRotation = transform.rotation;
 			transform.rotation = Quaternion.Lerp (actualRotation, wantedRotation, Time.deltaTime * rotationInterpolation);
@@ -61,21 +62,29 @@ public class ShipController : MonoBehaviour
 		}
 		carRigidbody.AddTorque (transform.up * turnInput * turnSpeed, ForceMode.Acceleration);
 		//transform.Rotate (Vector3.forward, -turnInput * forwardRotationRegen * Time.deltaTime);
-		
+
 	}
 
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "turbo") {
 			turboInput = 1.5f;
-			print ("TURBO ON!");
-		} 
+
+		} else if (other.gameObject.tag == "bullet") {
+			print ("we have been damaged");
+			damage = 0.5f;
+			Invoke ("resetDamage", 5);
+		}
+	}
+
+	void resetDamage(){
+		damage = 0f;
 	}
 
 	void OnTriggerExit(Collider other){
 		if (other.tag == "turbo") {
 			turboInput = 0f;
-			print ("TURBO OFF!");
+
 		}
 	}
 }

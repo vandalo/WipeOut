@@ -16,8 +16,10 @@ TagManager:
   - rightCollider
   - waypoint1
   - waypoint2
-  - waypoint
+  - waypoint3
   - Ship
+  - waypoint
+  - enemydetector
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - EnemyDetectors
+  - Ships
   - 
   - 
   - 

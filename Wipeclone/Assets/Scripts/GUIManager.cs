@@ -18,6 +18,7 @@ public class GUIManager : MonoBehaviour {
 	public static bool lapChange = false;
 	public Text pressEnter;
 	public static bool playing = false;
+	public static bool damage = false;
 	public GameObject ship;
 	public bool raceFinish = false;
 	public Camera cam1;
@@ -33,8 +34,9 @@ public class GUIManager : MonoBehaviour {
 	public Transform target1;
 	public Transform target2;
 	public Transform target3;
-	private float elapsedTime = 0;
+	public float elapsedTime = 0;
 
+	public Image damageOverlay;
 
 	public GameObject ship1;
 	public GameObject ship2;
@@ -63,6 +65,7 @@ public class GUIManager : MonoBehaviour {
 		timeLap_1Finish.enabled = false;
 		timeLap_2Finish.enabled = false;
 		timeLap_3Finish.enabled = false;
+		damageOverlay.enabled = false;
 		pause.enabled = false;
 		raceFinish = false;
 		firstTimeRender = true;
@@ -387,25 +390,33 @@ public class GUIManager : MonoBehaviour {
 			raceFinish = true;
 			playing = false;
 		}
+
+		if (damage) {
+			if (elapsedTime > 0.5) {
+				damageOverlay.enabled = !damageOverlay.enabled;
+				elapsedTime = 0;
+			}
+		} else {
+			damageOverlay.enabled = false;
+			elapsedTime = 0;
+		}
 	}
 
 
 	public static void colisionShip(Collider collider){
-		if(collider.gameObject.tag == "sortida"){
-			if(isCorrect == 1){
+		if (collider.gameObject.tag == "sortida") {
+			if (isCorrect == 1) {
 				lap++;
 				lapChange = true;
 			}
 			isCorrect = 0;
-		}
-		if(collider.gameObject.tag == "control"){
-			if(isCorrect == 0)
+		} else if (collider.gameObject.tag == "control") {
+			if (isCorrect == 0)
 				isCorrect = -1;
-		}
-		if(collider.gameObject.tag == "arrivada"){
-			if(isCorrect == 0)
+		} else if (collider.gameObject.tag == "arrivada") {
+			if (isCorrect == 0)
 				isCorrect = 1;
-		}
+		} 
 	}
 
 	string msToTime() {

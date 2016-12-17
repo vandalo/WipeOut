@@ -30,6 +30,15 @@ public class ShipControllerPlayer : MonoBehaviour {
 		} else {
 			GUIManager.colisionShip (other);
 		}
+		if (other.gameObject.tag == "bullet") {
+			GUIManager.damage = true;
+			Invoke ("resetDamage", 5);
+		}
+	}
+
+	void resetDamage(){
+		GUIManager.damage = false;
+	
 	}
 
 }
