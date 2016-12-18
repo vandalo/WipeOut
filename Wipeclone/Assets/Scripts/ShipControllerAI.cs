@@ -25,9 +25,9 @@ public class ShipControllerAI : MonoBehaviour {
 				path.Add (pathChilds [i].position);
 			}
 		}
-		debugSphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-		Destroy (debugSphere.GetComponent<SphereCollider> ());
-		debugSphere.transform.localScale = Vector3.one * 10;
+		//debugSphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+		//Destroy (debugSphere.GetComponent<SphereCollider> ());
+		//debugSphere.transform.localScale = Vector3.one * 10;
 	}
 	
 	// Update is called once per frame
@@ -41,7 +41,7 @@ public class ShipControllerAI : MonoBehaviour {
 		shipController.powerInput = directionToWaypoint.z * slowDown;
 		shipController.turnInput = directionToWaypoint.x;
 
-		debugSphere.transform.position = path[pathIndex];
+		//debugSphere.transform.position = path[pathIndex];
 
 		Debug.DrawLine (transform.position, transform.position + directionToWaypoint * 10);
 	}

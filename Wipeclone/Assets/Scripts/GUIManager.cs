@@ -35,6 +35,7 @@ public class GUIManager : MonoBehaviour {
 	public Transform target2;
 	public Transform target3;
 	public float elapsedTime = 0;
+	public float elapsedTimeForDamage = 0;
 
 	public Image damageOverlay;
 
@@ -273,6 +274,7 @@ public class GUIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		elapsedTime += Time.deltaTime;
+		elapsedTimeForDamage += Time.deltaTime;
 		if (Input.GetKeyDown (KeyCode.R)) {
 			int scene = PlayerPrefs.GetInt ("scene");
 			if(scene == 3)SceneManager.LoadScene("Map1", LoadSceneMode.Single);
@@ -392,13 +394,13 @@ public class GUIManager : MonoBehaviour {
 		}
 
 		if (damage) {
-			if (elapsedTime > 0.5) {
+			if (elapsedTimeForDamage > 0.5) {
 				damageOverlay.enabled = !damageOverlay.enabled;
-				elapsedTime = 0;
+				elapsedTimeForDamage = 0;
 			}
 		} else {
 			damageOverlay.enabled = false;
-			elapsedTime = 0;
+			elapsedTimeForDamage = 0;
 		}
 	}
 

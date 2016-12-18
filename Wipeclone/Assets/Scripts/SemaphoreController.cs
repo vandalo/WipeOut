@@ -14,7 +14,9 @@ public class SemaphoreController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		ShipControllerPlayer.playing = false;
+		ShipControllerAI.playing = false;
+		GUIManager.playing = false;
 	}
 	
 	// Update is called once per frame

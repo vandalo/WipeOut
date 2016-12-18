@@ -6,14 +6,14 @@ public var row2A: GameObject;
 public var row2B: GameObject;
 public var row3A: GameObject;
 public var row3B: GameObject;
-private var elapsedTime: int = 0;
+private var elapsedTime: float = 0;
 
 function Start () {
 
 }
 
 function Update () {
-	elapsedTime = elapsedTime + Time.deltaTime;
+	elapsedTime += Time.deltaTime;
 	if(elapsedTime > 3) elapsedTime = 0;
 	if (elapsedTime < 1){
 		row1A.GetComponent.<Renderer>().enabled = true;
