@@ -36,10 +36,14 @@ public class ShipControllerAI : MonoBehaviour {
 			return;
 		Vector3 directionToWaypoint = transform.InverseTransformPoint(path[pathIndex]).normalized ;
 
-		directionToWaypoint = directionToWaypoint / directionToWaypoint.z;
+
 
 		shipController.powerInput = directionToWaypoint.z * slowDown;
-		shipController.turnInput = directionToWaypoint.x;
+		if (directionToWaypoint.x > 0) {
+			shipController.turnInput = 1;
+		} else if (directionToWaypoint.x < 0) {
+			shipController.turnInput = -1;
+		}
 
 		//debugSphere.transform.position = path[pathIndex];
 
