@@ -38,8 +38,9 @@ public class ShipControllerAI : MonoBehaviour {
 
 
 
-		shipController.powerInput = directionToWaypoint.z * slowDown;
-		if (directionToWaypoint.x > 0) {
+		shipController.powerInput = 0.8f * slowDown;
+
+		if ( directionToWaypoint.x > 0) {
 			shipController.turnInput = 1;
 		} else if (directionToWaypoint.x < 0) {
 			shipController.turnInput = -1;
@@ -53,12 +54,15 @@ public class ShipControllerAI : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == waypointTag) {
 			pathIndex++;
-			if (pathIndex == path.Count) {
-				pathIndex = 0;
-			}
 			print ("We are in a waypoint, index:" + pathIndex);
 		} else if (other.tag == "slow") {
-			slowDown = 0.8f;
+			slowDown = 0.4f;
+		} else if (other.tag == "low_bound") {
+			transform.position = path [pathIndex];
+			pathIndex++;
+		}
+		if (pathIndex == path.Count) {
+			pathIndex = 0;
 		}
 	}
 
